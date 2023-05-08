@@ -2,6 +2,10 @@ import os, time
 print("To Do List Manager")
 todo = []
 
+f = open("todo.txt", "r")
+todo = eval(f.read())
+f.close()
+
 def prettyPrint():
   print("To Do List") 
   print()
@@ -42,3 +46,7 @@ while True:
       continue
   time.sleep(1)
   os.system('clear')
+
+  f = open("todo.txt", "w")
+  f.write(str(todo))
+  f.close()
